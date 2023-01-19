@@ -48,6 +48,12 @@ nvcc -V
 nvidia-smi 
 ```
 
+## PyTorch
+[PyTorch GET STARTED](https://pytorch.org/get-started/locally/)
+```
+pip3 install torch torchvision torchaudio
+```
+
 ## いろいろ削除
 [UbuntuでCUDAの削除から再インストールまでのメモ](https://misoji-engineer.com/archives/reinstall-cuda-on-ubuntu.html)
 ```
