@@ -24,7 +24,29 @@ export LD_LIBRARY_PATH=/usr/local/cuda-11.7/lib64:$LD_LIBRARY_PATH
 ```
 
 ## cuDNN
-
+[NVIDIA cuDNN のインストール](https://www.kkaneko.jp/tools/ubuntu/ubuntu_cudnn.html)
+```
+sudo apt-get install zlib1g
+sudo dpkg -i cudnn-local-repo-ubuntu2004-8.7.0.84_1.0-1_amd64.deb 
+cd
+sudo apt update
+cd /var/cudnn-local-repo-ubuntu2004-8.7.0.84/
+ls
+sudo dpkg -i libcudnn8_8.7.0.84-1+cuda11.8_amd64.deb 
+sudo dpkg -i libcudnn8-dev_8.7.0.84-1+cuda11.8_amd64.deb 
+sudo dpkg -i libcudnn8-samples_8.7.0.84-1+cuda11.8_amd64.deb 
+cd & cd /tmp/
+wget https://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu2004/x86_64/nvidia-machine-learning-repo-ubuntu2004_1.0.0-1_amd64.deb
+sudo dpkg -i nvidia-machine-learning-repo-ubuntu2004_1.0.0-1_amd64.deb
+sudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu2004/x86_64/7fa2af80.pub
+sudo apt -y update
+apt-cache search cudnn
+sudo apt -y update
+sudo apt -y install libcudnn8 libcudnn8-dev
+dpkg -l | grep cudnn
+nvcc -V
+nvidia-smi 
+```
 
 ## いろいろ削除
 [UbuntuでCUDAの削除から再インストールまでのメモ](https://misoji-engineer.com/archives/reinstall-cuda-on-ubuntu.html)
